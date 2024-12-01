@@ -46,11 +46,12 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-space text-text-primary flex flex-col min-h-screen relative`}>
         <GlowingStars />
-        <Meteors />
+         <Meteors number={20} />
         <FloatingNavDemo navItems={navItems} />
         <div className="relative z-10">
           <Header />
           <main className="flex-grow">
+          <Meteors number={20} />
             {children}
           </main>
           <Footer />
