@@ -10,64 +10,63 @@ import { Github, ExternalLink } from 'lucide-react'
 
 const projects = [
   {
-    // TO-DO
-    title: "Cosmic Task Tracker",
-    description: "A space-themed task management application with real-time updates and collaborative features.",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    category: "Full-stack",
-    image: "/placeholder.svg?height=300&width=400",
-    github: "https://github.com/yourusername/cosmic-task-tracker",
-    live: "https://cosmic-task-tracker-demo.com"
-  },
-  {
     title: "Weather App",
-    description: "An api weather application that display's weather data with a sleek modern design.",
-    tags: ["Vite", "OpenWeather API", "TypeScript"],
-    category: "Front-end",
-    image: "/assets/Weather App, Weather Page.png?height=300&width=400",
+    description: "A weather app using a free API to get forecasts for desired locations, built with a sleek modern design.",
+    tags: ["TypeScript", "OpenWeather API", "React"],
+    category: "Full-stack",
+    image: "/assets/WeatherApp.png?height=300&width=400",
     github: "https://github.com/MeeksonJr/weather-app",
-    live: "https://getyourweather.mohameddatt.com/"
+    live: "https://getyourweather.mohameddatt.com/",
   },
   {
-    title: "Interstellar PlanSmart AI",
-    description: "A full-stack blog platform with a space exploration theme, featuring user authentication and markdown support.",
-    tags: ["Next.js", "TypeScript", "Clerk", "PostgreSQL", "OpenAI"],
-    category: "Front-End",
-    image: "/assets/PlanSmart-ai.png?height=300&width=400",
+    title: "PlanSmart AI",
+    description: "Plan efficiently with smart AI features integrated into this application.",
+    tags: ["TypeScript", "Next.js", "OpenAI"],
+    category: "Full-stack",
+    image: "/assets/PlanSmart-AI.png?height=300&width=400",
     github: "https://github.com/MeeksonJr/plan-smart-ai",
-    live: "https://lty0nnjlammmdvgrgdroexnyon5ixk8g.vercel.app/"
-  },
-  {
-    title: "Story Time",
-    description: " StoryTime app built using Next.js. It allows users to upload stories, select reading styles, and listen to them.",
-    tags: ["JavaScript", "Next.js", "Clerk", "Drizzle", "Shadcn", "Lucid-react"],
-    category: "Front-end",
-    image: "/assets/Story-Time.png?height=300&width=400",
-    github: "https://github.com/MeeksonJr/story-time",
-    live: "https://story-time-six.vercel.app/"
-  },
-  {
-    // To-DO
-    title: "Space Station API",
-    description: "A RESTful API service providing data about various space stations and their current positions.",
-    tags: ["Express.js", "MongoDB", "JWT Authentication"],
-    category: "Back-end",
-    image: "/placeholder.svg?height=300&width=400",
-    github: "https://github.com/yourusername/space-station-api",
-    live: "https://space-station-api-docs.com"
+    live: "https://lty0nnjlammmdvgrgdroexnyon5ixk8g.vercel.app/",
   },
   {
     title: "Shampoo",
-    description: "True Shampoo TrueShampoo is a React.js application designed for managing and reviewing hair care products",
-    tags: ["React", "Mongoose", "api", "TypeScript", "Local-Storage"],
-    category: "Front-End",
+    description: "Check the shampoo you know! A React app for managing and reviewing hair care products.",
+    tags: ["React", "Mongoose", "API", "TypeScript", "Local-Storage"],
+    category: "Front-end",
     image: "/assets/Shampoo-Page.png?height=300&width=400",
     github: "https://github.com/MeeksonJr/Shampoo",
-    live: "https://github.com/MeeksonJr/Shampoo"
-  }
-]
+    live: "https://github.com/MeeksonJr/Shampoo",
+  },
+  {
+    title: "Contact List Manager",
+    description: "A web project based on a school Java programming assignment about managing a contact list.",
+    tags: ["JavaScript"],
+    category: "Front-end",
+    image: "/assets/n-a-image.jpg?height=300&width=400",
+    github: "https://github.com/MeeksonJr/ContactListManager",
+    live: "https://contact-list-manager-demo.com",
+  },
+  {
+    title: "Dungeon & Dragons",
+    description: "Dungeon and Dragon site with a backend database and ChatGPT chat API integrated.",
+    tags: ["TypeScript", "React", "MongoDB", "OpenAI"],
+    category: "Front-end",
+    image: "/assets/n-a-image.jpg?height=300&width=400",
+    github: "https://github.com/MeeksonJr/app-dnd",
+    live: "https://dnd-app-demo.com",
+  },
+  {
+    title: "Story Time",
+    description: "A StoryTime app that allows users to upload stories, select reading styles, and listen to them.",
+    tags: ["TypeScript", "Next.js", "Shadcn", "Lucid-react"],
+    category: "Front-end",
+    image: "/assets/Story-Time.png?height=300&width=400",
+    github: "https://github.com/MeeksonJr/story-time",
+    live: "https://story-time-six.vercel.app/",
+  },
+];
 
-const categories = ["All", "Full-stack", "Front-end", "Back-end"]
+const categories = ["All", "Full-stack", "Front-end", "Back-end"];
+
 
 export function Projects() {
   const [activeCategory, setActiveCategory] = useState("All")

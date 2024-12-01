@@ -11,7 +11,7 @@ export const GlowingStars = () => {
       {stars.map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-accent dark:bg-accent rounded-full"
+          className="absolute w-1 h-1 bg-black rounded-full"
           initial={{
             x: Math.random() * window.innerWidth,
             y: Math.random() * window.innerHeight,
@@ -31,4 +31,3 @@ export const GlowingStars = () => {
     </div>
   );
 };
-
