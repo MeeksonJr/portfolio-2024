@@ -33,8 +33,8 @@ const projects = [
     tags: ["React", "Mongoose", "API", "TypeScript", "Local-Storage"],
     category: "Front-end",
     image: "/assets/Shampoo-Page.png?height=300&width=400",
-    github: "https://github.com/MeeksonJr/Shampoo",
-    live: "https://github.com/MeeksonJr/Shampoo",
+    github: "https://github.com/MeeksonJr/next-shampoo",
+    live: "https://next-shampoo.vercel.app/",
   },
   {
     title: "Contact List Manager",

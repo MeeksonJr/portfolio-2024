@@ -7,14 +7,14 @@ export default function Footer() {
       <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            Built by Mohamed Datt. Powered by{" "}
+            Built by Mohamed Datt. Powered by the{" "}
             <a
               href="https://vercel.com"
               target="_blank noopener"
               rel="noreferrer"
               className="font-medium underline underline-offset-4 hover:text-primary"
             >
-              Vercel
+              Future
             </a>
             .
           </p>
@@ -24,7 +24,7 @@ export default function Footer() {
             <Github className="h-5 w-5" />
             <span className="sr-only">GitHub</span>
           </Link>
-          <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+          <Link href="https://www.linkedin.com/in/mohamed-datt-b60907296/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
             <Linkedin className="h-5 w-5" />
             <span className="sr-only">LinkedIn</span>
           </Link>
