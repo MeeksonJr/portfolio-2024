@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Github, ExternalLink } from 'lucide-react'
+import Image from "next/image"
 
 const projects = [
   {
@@ -118,10 +119,12 @@ export function Projects() {
               >
                 <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/30 cosmic-border">
                   <div className="relative overflow-hidden">
-                    <img 
+                    <Image 
                       src={project.image} 
                       alt={project.title} 
                       className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                      width={400}
+                      height={300}
                     />
                     <div className="absolute inset-0 bg-background/80 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                       <div className="text-text-primary text-center p-4">

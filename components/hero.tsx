@@ -44,7 +44,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Hi, I'm <span className="text-primary">Mohamed Datt</span>
+        Hi, I&apos;m <span className="text-primary">Mohamed Datt</span>
       </motion.h1>
       <motion.div
         className="text-2xl md:text-4xl mb-8 font-mono"
