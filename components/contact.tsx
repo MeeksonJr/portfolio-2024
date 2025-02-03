@@ -1,28 +1,65 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react'
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckCircle, Mail, Phone, MapPin, Github, Linkedin, Instagram } from "lucide-react";
+import emailjs from "emailjs-com";
 
 export function Contact() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const [messageType, setMessageType] = useState<"success" | "error" | null>(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically handle the form submission
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
-  }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const btn = form.querySelector("button") as HTMLButtonElement;
+    btn.innerText = "Sending...";
+
+    const serviceID = "service_yo4mwfr"; // Replace with your actual service ID
+    const templateID = "template_fhorl0g"; // Replace with your actual template ID
+    const publicKey = "YCcwHorjZfMyDmxAY"; // Replace with your actual EmailJS Public Key
+
+    // Get user email from the form
+    const userEmail = form.email.value;
+
+    emailjs.sendForm(serviceID, templateID, form, publicKey).then(
+      () => {
+        btn.innerText = "Send Message";
+        setMessage("Message sent successfully!");
+        setMessageType("success");
+        setIsSubmitted(true);
+        form.reset();
+
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setMessage(null);
+          setMessageType(null);
+        }, 3000);
+      },
+      (error) => {
+        btn.innerText = "Send Message";
+        setMessage("Failed to send message. Please try again.");
+        setMessageType("error");
+        console.error("EmailJS Error:", error);
+      }
+    );
+
+    // Include user's email in the message body
+    const emailBody = `User Email: ${userEmail}\n\nMessage: ${form.message.value}`;
+    emailjs.send(serviceID, templateID, { message: emailBody, reply_to: userEmail }, publicKey);
+  };
 
   return (
     <section id="contact" className="py-20 px-4 section-scroll bg-space">
       <div className="container mx-auto">
-        <motion.h2 
+        <motion.h2
           className="text-4xl font-bold text-center mb-12 glow font-orbitron"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,11 +68,8 @@ export function Contact() {
           Contact Transmission
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          {/* Contact Info */}
+          <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <Card className="bg-card/50 backdrop-blur-sm border-primary/30 cosmic-border">
               <CardHeader>
                 <CardTitle className="text-text-primary">Contact Information</CardTitle>
@@ -77,31 +111,27 @@ export function Contact() {
               </CardContent>
             </Card>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {/* TO-DO */}
-            {/* C */}
+
+          {/* Contact Form */}
+          <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
             <Card className="bg-card/50 backdrop-blur-sm border-primary/30 cosmic-border">
               <CardHeader>
                 <CardTitle className="text-text-primary">Send Me a Message</CardTitle>
                 <CardDescription className="text-text-muted">I'll get back to you as soon as possible</CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4" ref={formRef}>
                   <div>
                     <Label htmlFor="name" className="text-text-primary">Name</Label>
-                    <Input id="name" placeholder="Your Name" required className="bg-background/30 text-text-primary border-primary/50 focus:border-primary" />
+                    <Input id="name" name="name" placeholder="Your Name" required className="bg-background/30 text-text-primary border-primary/50 focus:border-primary" />
                   </div>
                   <div>
                     <Label htmlFor="email" className="text-text-primary">Email</Label>
-                    <Input id="email" type="email" placeholder="Your Email" required className="bg-background/30 text-text-primary border-primary/50 focus:border-primary" />
+                    <Input id="email" name="email" type="email" placeholder="Your Email" required className="bg-background/30 text-text-primary border-primary/50 focus:border-primary" />
                   </div>
                   <div>
                     <Label htmlFor="message" className="text-text-primary">Message</Label>
-                    <Textarea id="message" placeholder="Your Message" required className="bg-background/30 text-text-primary border-primary/50 focus:border-primary" />
+                    <Textarea id="message" name="message" placeholder="Your Message" required className="bg-background/30 text-text-primary border-primary/50 focus:border-primary" />
                   </div>
                   <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/80">Send Message</Button>
                 </form>
@@ -110,20 +140,23 @@ export function Contact() {
           </motion.div>
         </div>
       </div>
+
+      {/* Success/Error Message */}
       <AnimatePresence>
-        {isSubmitted && (
+        {isSubmitted && message && (
           <motion.div
-            className="fixed bottom-4 right-4 bg-primary text-primary-foreground p-4 rounded-md flex items-center"
+            className={`fixed bottom-4 right-4 p-4 rounded-md flex items-center ${
+              messageType === "success" ? "bg-green-500 text-white" : "bg-red-500 text-white"
+            }`}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
           >
-            <CheckCircle className="mr-2" />
-            Message sent successfully!
+            {messageType === "success" ? <CheckCircle className="mr-2" /> : <span className="mr-2">⚠️</span>}
+            {message}
           </motion.div>
         )}
       </AnimatePresence>
     </section>
-  )
+  );
 }
-
