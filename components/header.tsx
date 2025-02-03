@@ -28,7 +28,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-4 ml-4">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
         <div className="mr-4 hidden md:flex justify-between">
           <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -56,16 +56,16 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden">
           <nav className="flex flex-col items-center space-y-4 py-4">
-            <button onClick={() => scrollToSection('about')} className="transition-colors hover:text-primary text-muted-foreground">
+            <button onClick={() => scrollToSection('about')} className="transition-colors hover:text-primary text-muted-foreground py-2">
               About
             </button>
-            <button onClick={() => scrollToSection('skills')} className="transition-colors hover:text-primary text-muted-foreground">
+            <button onClick={() => scrollToSection('skills')} className="transition-colors hover:text-primary text-muted-foreground py-2">
               Skills
             </button>
-            <button onClick={() => scrollToSection('projects')} className="transition-colors hover:text-primary text-muted-foreground">
+            <button onClick={() => scrollToSection('projects')} className="transition-colors hover:text-primary text-muted-foreground py-2">
               Projects
             </button>
-            <button onClick={() => scrollToSection('contact')} className="transition-colors hover:text-primary text-muted-foreground">
+            <button onClick={() => scrollToSection('contact')} className="transition-colors hover:text-primary text-muted-foreground py-2">
               Contact
             </button>
           </nav>

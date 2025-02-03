@@ -3,6 +3,13 @@
 import React from "react"
 import { cn } from "@/lib/utils"
 
+// Define a type for the meteor styles
+type MeteorStyle = {
+  left: string;
+  animationDelay: string;
+  animationDuration: string;
+};
+
 export const Meteors = ({
   number,
   children,
@@ -12,11 +19,29 @@ export const Meteors = ({
   children?: React.ReactNode
   className?: string
 }) => {
-  const meteors = new Array(number || 20).fill(true)
+  // Initialize the meteors array with the correct type
+  const meteors: MeteorStyle[] = new Array(number || 20).fill(true).map(() => ({
+    left: Math.floor(Math.random() * (400 - -400) + -400) + "px",
+    animationDelay: Math.random() * (0.8 - 0.2) + 0.2 + "s",
+    animationDuration: Math.floor(Math.random() * (30 - 2) + 2) + "s",
+  }));
+  
+  // Use the defined type for the state
+  const [meteorStyles, setMeteorStyles] = React.useState<MeteorStyle[]>([]);
+  
+  React.useEffect(() => {
+    const generatedStyles: MeteorStyle[] = meteors.map(() => ({
+      left: Math.floor(Math.random() * (400 - -400) + -400) + "px",
+      animationDelay: Math.random() * (0.8 - 0.2) + 0.2 + "s",
+      animationDuration: Math.floor(Math.random() * (30 - 2) + 2) + "s",
+    }));
+    setMeteorStyles(generatedStyles);
+  }, []);
+  
   return (
     <div className="relative w-full h-full">
       {children}
-      {meteors.map((el, idx) => (
+      {meteorStyles.map((style, idx) => (
         <span
           key={"meteor" + idx}
           className={cn(
@@ -26,9 +51,9 @@ export const Meteors = ({
           )}
           style={{
             top: 0,
-            left: Math.floor(Math.random() * (400 - -400) + -400) + "px",
-            animationDelay: Math.random() * (0.8 - 0.2) + 0.2 + "s",
-            animationDuration: Math.floor(Math.random() * (30 - 2) + 2) + "s",
+            left: style.left,
+            animationDelay: style.animationDelay,
+            animationDuration: style.animationDuration,
           }}
         ></span>
       ))}
