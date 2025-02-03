@@ -45,7 +45,7 @@ export function About() {
               Wellcome, fellow space traveler to my station! I'm Mohamed Datt, a Computer Science student and a software developer. My journey began in the planet of Engineering, but my true calling led me to the vast universe of coding and web development.
             </p>
             <p className="text-lg mb-6 text-text-muted">
-              I am armed with knowledge in CAD, and Arduino from my old planet, But also gained new knowledge along the way like Python, HTML, CSS, and JavaScript to create a new world. I'm on a mission to create efficient and user-friendly applications that push the boundaries of what's possible in the digital frontier.
+              I am armed with knowledge in CAD, and Arduino from my old planet, But also gained new knowledge along the way like Python, HTML, CSS, and JavaScript to create a new world. I&apos;m on a mission to create efficient and user-friendly applications that push the boundaries of what&apos;s possible in the digital frontier.
             </p>
             <div className="mb-6">
               <h3 className="text-xl font-semibold mb-2 flex items-center text-text-secondary">
