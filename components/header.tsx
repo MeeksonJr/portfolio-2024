@@ -30,23 +30,22 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-4 ml-4">
       <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
-        <div className="mr-4 hidden md:flex justify-between">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
+        <div className="flex flex-1 items-center justify-between ">
+          <Link href="/" className="flex items-center space-x-2">
             <Code className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block">
               Mohamed Datt
             </span>
           </Link>
-          <Button asChild className="inline-flex items-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
-              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                View Resume
-              </Link>
+          <Button asChild className="hidden md:inline-flex items-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
+            <Link href="/assets/Mohamed-Datt-Software Developer - resume.pdf" target="_blank" rel="noopener noreferrer">
+              View Resume
+            </Link>
           </Button>
         </div>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+        <div className="flex flex-1 items-center justify-end md:hidden">
           <Button
             variant="ghost"
-            className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}

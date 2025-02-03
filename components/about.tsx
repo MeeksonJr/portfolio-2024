@@ -42,17 +42,26 @@ export function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="text-lg mb-6 text-text-muted">
-              Greetings, fellow space traveler! I'm Mohamed Datt, a passionate Computer Science student and a software developer. My journey began in the realm of Engineering, but my true calling led me to the vast universe of coding and web development.
+              Wellcome, fellow space traveler to my station! I'm Mohamed Datt, a Computer Science student and a software developer. My journey began in the planet of Engineering, but my true calling led me to the vast universe of coding and web development.
             </p>
             <p className="text-lg mb-6 text-text-muted">
-              Armed with knowledge in CAD, Arduino, Python, HTML, CSS, and JavaScript, I'm on a mission to create efficient and user-friendly applications that push the boundaries of what's possible in the digital frontier.
+              I am armed with knowledge in CAD, and Arduino from my old planet, But also gained new knowledge along the way like Python, HTML, CSS, and JavaScript to create a new world. I'm on a mission to create efficient and user-friendly applications that push the boundaries of what's possible in the digital frontier.
             </p>
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold mb-2 flex items-center text-text-secondary">
+                <GraduationCap className="mr-2" /> Space Exploration
+              </h3>
+              <p className="text-text-muted">
+                Bacholers of Science (Jan 2025 - Present)<br />
+                Old Dominion University, Norfolk
+              </p>
+            </div>
             <div className="mb-6">
               <h3 className="text-xl font-semibold mb-2 flex items-center text-text-secondary">
                 <GraduationCap className="mr-2" /> Space Academy
               </h3>
               <p className="text-text-muted">
-                Associates of Science (Sep 2022 - Present)<br />
+                Associates of Science (Sep 2022 - Dec 2024)<br />
                 Tidewater Community College, Norfolk
               </p>
             </div>
@@ -63,6 +72,16 @@ export function About() {
               <p className="text-text-muted">
                 CSR at Family Dollar, Norfolk (Jul 2023 - Mar 2024)<br />
                 Dual-role position as both a cashier and freight handler
+              </p>
+              <br />
+              <p className="text-text-muted">
+                Software Engineer, Intern (Sept 2024 - Dec 2024)<br />
+                Worked with a great team to create a brand boosting app called 
+                <Link href="https://www.linkedin.com/company/brandboostrai/" className=" text-blue-900" target="_blank" rel="noopener noreferrer">
+                  , BrandBoost-ai
+                </Link> 
+                <br />
+                Won 1st place out of 13 teams.
               </p>
             </div>
             <Button size="lg" asChild className="cosmic-border">

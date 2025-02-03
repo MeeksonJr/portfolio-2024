@@ -56,7 +56,7 @@ export function Hero() {
           sequence={[
             'Software Developer',
             2000,
-            'Space Explorer',
+            'UI/UX Developer',
             2000,
             'Full-stack Developer',
             2000,
@@ -73,7 +73,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8 }}
       >
-        Embarking on a cosmic journey through the digital universe. Passionate about crafting innovative solutions and exploring the frontiers of technology.
+        Embarking on a journey through the digital universe. Love crafting innovative solutions and exploring the frontiers of technology.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
