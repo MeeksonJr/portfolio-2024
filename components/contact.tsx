@@ -117,7 +117,7 @@ export function Contact() {
             <Card className="bg-card/50 backdrop-blur-sm border-primary/30 cosmic-border">
               <CardHeader>
                 <CardTitle className="text-text-primary">Send Me a Message</CardTitle>
-                <CardDescription className="text-text-muted">I'll get back to you as soon as possible</CardDescription>
+                <CardDescription className="text-text-muted">I&apos;ll get back to you as soon as possible</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4" ref={formRef}>

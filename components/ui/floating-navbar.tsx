@@ -9,14 +9,18 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+// Define a type for the nav items
+type NavItem = {
+  name: string;
+  link: string;
+  icon?: React.ReactNode; // Optional icon property
+};
+
 export const FloatingNavDemo = ({
   navItems,
   className,
 }: {
-  navItems: {
-    name: string;
-    link: string;
-  }[];
+  navItems: NavItem[]; // Use the defined NavItem type
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
@@ -59,7 +63,7 @@ export const FloatingNavDemo = ({
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {navItems.map((navItem, idx) => (
           <a
             key={`link=${idx}`}
             href={navItem.link}
@@ -75,10 +79,5 @@ export const FloatingNavDemo = ({
       </motion.div>
     </AnimatePresence>
   );
-};
-
-// Specify a type for the props or state instead of using `any`
-type FloatingNavbarProps = {
-    // Define your props here
 };
 
