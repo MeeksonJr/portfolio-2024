@@ -77,3 +77,8 @@ export const FloatingNavDemo = ({
   );
 };
 
+// Specify a type for the props or state instead of using `any`
+type FloatingNavbarProps = {
+    // Define your props here
+};
+

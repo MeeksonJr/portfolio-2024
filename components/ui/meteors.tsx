@@ -36,7 +36,7 @@ export const Meteors = ({
       animationDuration: Math.floor(Math.random() * (30 - 2) + 2) + "s",
     }));
     setMeteorStyles(generatedStyles);
-  }, []);
+  }, [meteors]);
   
   return (
     <div className="relative w-full h-full">
