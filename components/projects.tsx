@@ -52,8 +52,8 @@ const projects = [
     tags: ["TypeScript", "Next", "Framer Motion", "supabase", "HuggingFace", "Gemini", "PayPal"],
     category: "Full-stack",
     image: "/assets/EduSphere-landingPage.png?height=300&width=400",
-    github: "https://github.com/MeeksonJr/app-dnd",
-    live: "https://dnd-app-demo.com",
+    github: "https://github.com/MeeksonJr/edusphere-ai",
+    live: "https://edusphere-ai-eight.vercel.app/",
   },
   {
     title: "Story Time",
