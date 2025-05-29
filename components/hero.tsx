@@ -28,7 +28,7 @@ export function Hero() {
       >
         {/* C:\Users\Mo\Next\portfolio-2024\public\assets\sitting-shot.JPG */}
         <Image
-          src="/assets/Photo.JPG"
+          src="/assets/Photo.jpg"
           alt="Mohamed Datt"
           width={200}
           height={200}
